@@ -78,18 +78,18 @@ class App extends Component {
               </Paper>
             </Grid>
          );
-    } else if (this.state.results !== undefined && this.state.realName !== 'undefined'){
+    } else if (0 in this.state.ratingInfo && this.state.realName !== 'undefined'){
       return (
         <Grid container direction="column" alignItems="center" justify="center">
           <Button>
             <img src={this.state.posterUrl} alt={this.state.realName} />
-            <p><b>{this.state.realName}</b>
+            <h4><b>{this.state.realName}</b>
               <br />Ratings: {this.state.ratingInfo.map(item => 
                 <p>
                   Source: {item.Source}, rating: {item.Value}
                 </p>
               )}
-            </p>
+            </h4>
           </Button>
         </Grid>
       );
