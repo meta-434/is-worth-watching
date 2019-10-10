@@ -55,7 +55,7 @@ class App extends Component {
   /*apiCallSingular - this makes calls to OMDB which has a much more comprehensive 
   review aggregation than TMDB, but has a way worse search functionality.*/
   apiCallSingular = event => {
-    axios.get("http://www.omdbapi.com/?t=" + event.target.alt + "&apikey=" + OMDB_API_KEY).then(response => {
+    axios.get("https://www.omdbapi.com/?t=" + event.target.alt + "&apikey=" + OMDB_API_KEY).then(response => {
       console.log(response.data.Ratings)
       this.setState({result : response.data, realName : event.target.alt, posterUrl : event.target.currentSrc, ratingInfo: response.data.Ratings})
     });
